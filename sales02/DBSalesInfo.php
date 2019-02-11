@@ -61,7 +61,7 @@ eof;
         $list = "<select name='CustomerID'>\n";
         $list .= "<option value='-99'>--  選択してください  --</option>\n";
         foreach($rows=$res->fetchAll(PDO::FETCH_NUM) as $row){
-            $list .= "<option value='{$row[0]}'>{$row[1]}</option>\n";
+            $list .= "<option value='{$row[0]}' {selected}>{$row[1]}</option>\n";
         }
         $list .= "</select>\n";
         return $list;
@@ -74,7 +74,7 @@ eof;
         $list = "<select name='CustomerID'>\n";
         $list .= "<option value='-99'>--  選択してください  --</option>\n";
         foreach($row=$res->fetchAll(PDO::FETCH_NUM) as $row){
-            $list .= "<option value='{$row[0]}'?{row[1]}</option>\n";
+            $list .= "<option value='{$row[0]}'>{$row[1]}</option>\n";
         }
         $list .= "</select>\n";
         return $list;
